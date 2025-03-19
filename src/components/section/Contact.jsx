@@ -5,34 +5,32 @@ import emailjs from 'emailjs-com'
 export const Contact = () => {
 
     const [formData, setFormData] = useState({
-        name: " ",
+        name: "",
         email: "",
         message: ""
     });
-    const SERVICE_ID = "service_v2jip4y";
-    const TEMPLATE_ID = "template_e3z1e6k";
-    const PUBLIC_KEY = "QWVZCHLAldahwceF5";
+
     const handleSubmit = (e) => {
-    
+
         e.preventDefault();
 
-        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY).then((res) => {
-            alert(res+'Message Sent Successfully!');
-            setFormData({name:"", email:"", message:""});
+        emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, e.target, import.meta.env.VITE_PUBLIC_KEY).then((res) => {
+            alert('Message Sent Successfully!');
+            setFormData({ name: "", email: "", message: "" });
         }).catch(() => alert('Failed to send message!'));
 
     }
 
     return (
-        <section id='#contact' className='min-h-screen flex items-center justify-center py-20'>
+        <section id='contact' className='min-h-screen flex items-center justify-center py-20'>
             <RevealOnScroll>
                 <div className="px-4 w-80 sm:w-96 md:w-xl mx-auto">
                     <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">Get In Touch</h2>
                     <form action="" className="space-y-6" onSubmit={handleSubmit}>
                         <div className="relative">
                             <input type="text" id='name' name='name' value={formData.name} required className='w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5'
-                                onChange={(e) => setFormData({...formData, name: e.target.value})}
                                 placeholder='Name..'
+                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                             />
                         </div>
                         <div className="relative">
@@ -48,7 +46,7 @@ export const Contact = () => {
                             />
                         </div>
 
-                        <button type='submit' className='w-full bg-blue-500 text-white py-3 px-6 rounded font-medium relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[4_3_15px_rgba(59, 230, 246, 0.4)]'>Submit</button>
+                        <button type='submit' className='w-full bg-blue-500 text-white py-3 px-6 rounded font-medium relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[4_3_15px_rgba(59, 230, 246, 0.4)] cursor-pointer'>Submit</button>
                     </form>
                 </div>
             </RevealOnScroll>
