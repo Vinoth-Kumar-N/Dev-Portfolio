@@ -4,6 +4,9 @@ import './index.css';
 import { Navbar } from './components/Navbar';
 import { MobileMenu } from './components/MobileMenu';
 import { Home } from './components/section/Home';
+import { About } from './components/section/About';
+import { Projects } from './components/section/Projects.jsx';
+import { Contact } from './components/section/Contact.jsx';
 
 function App() {
 
@@ -21,6 +24,9 @@ function App() {
            <Navbar menuOpen = {menuOpen} setmenuOpen = {setmenuOpen} />
            <MobileMenu menuOpen = {menuOpen} setmenuOpen = {setmenuOpen} />
            <Home />
+           <About />
+           <Projects />
+           <Contact />
         </div>
     </>
   )

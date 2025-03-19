@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Navbar = ({menuOpen, setmenuOpen}) => {
     return (
-        <div className='fixed top-0 w-full z-40 bg-[rgba(10, 10, 10, 0.8)] backdrop-blur-lg  border-b border-b-white/10 shadow-lg'>
+        <div className='fixed top-0 w-full z-50 bg-[rgba(10, 10, 10, 0.8)] backdrop-blur-lg  border-b border-b-white/10 shadow-lg'>
             <div className="max-w-5xl mx-auto px-4 flex justify-between">
                 <div className="flex justify-between items-center h-16">
                     <a className='font-mono text-xl font-bold text-white' href="#home">{" "} VinothKmr <span className='text-blue-500 '>.Dev</span></a>
